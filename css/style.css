@@ -2,15 +2,20 @@
 :root{
     /* --orange : #F15412; */
 }
+*{
+    /* border: 1px solid red; */
+}
 body{
     font-family: 'Roboto Flex', sans-serif;
     background: url(../assets/weather1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    /* height: 100vh; */
+    width:100%;
 }
 .main{
     height: inherit;
+    /* width:100%; */
 }
 .card {
     backdrop-filter: blur(4px) saturate(179%);
