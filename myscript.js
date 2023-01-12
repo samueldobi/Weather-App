@@ -1,22 +1,23 @@
 const temp = document.querySelector('.temp')
 const locate = document.querySelector('.location')
 const condition = document.querySelector('.condit')
+const searchBtn =  document.querySelector('.search-btn')
+const inputField = document.querySelector('.form-control')
 
-//Retrieving api data
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': '7af9d8dc6dmsha8a77ced0ded8a7p17c3cfjsn2f7d13871da6',
-		'X-RapidAPI-Host': 'open-weather13.p.rapidapi.com'
-	}
-};
-
-fetch('https://open-weather13.p.rapidapi.com/city/landon', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
-
-//
-condition.addEventListener('click',()=>{
-    console.log('ho')
+inputField.addEventListener('input',()=>{
+    getApi(inputField.value)
 })
+//Retrieving api data
+function getApi(city){
+    let api =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid={6ba47b673207e9c0536f15e9399b73a0}`
+    fetch(api)
+    .then(response => console.log(response.json()))
+}
+// //Function to get the weather
+// function getWeather(){}
+// //Display the data 
+// searchBtn.addEventListener('click', ()=>{
+//     getWeather()
+//     console.log('hello')
+// })
+// 6ba47b673207e9c0536f15e9399b73a0
