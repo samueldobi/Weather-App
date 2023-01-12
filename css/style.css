@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 :root{
     /* --orange : #F15412; */
 }
@@ -6,7 +7,7 @@
     /* border: 1px solid red; */
 }
 body{
-    font-family: 'Roboto Flex', sans-serif;
+    font-family: 'Inter', sans-serif;
     background: url(../assets/weather1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
