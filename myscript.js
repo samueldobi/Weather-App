@@ -5,20 +5,22 @@ const searchBtn =  document.querySelector('.search-btn')
 const inputField = document.querySelector('.form-control')
 
 
-inputField.addEventListener('input',()=>{
+searchBtn.addEventListener('click',()=>{
     getApi(inputField.value)
 })
 //Retrieving api data
 function getApi(city){
-    // let api =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=6ba47b673207e9c0536f15e9399b73a0`
     let api =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=6ba47b673207e9c0536f15e9399b73a0`
     fetch(api)
     .then(response => response.json())
     .then(result => (weatherDetails(result)))
+    // .catch((error) => {
+    //     console.error('Error:', error);
+    //   });
   
 }
 function weatherDetails(info){
-    console.log(info)
+    console.log(info.cod)
     let degree = ((info.main.feels_like) - 273.15).toFixed(2)
     let cityName = info.name
     let weatherDescription = info.weather[0].description
@@ -26,13 +28,7 @@ function weatherDetails(info){
     temp.innerHTML = degree
     locate.innerHTML = cityName
     condition.innerHTML = weatherDescription
+    if(info.cod == "404"){
+        temp.innerHTML = 'City not found'
+    }
 }
-
-// //Function to get the weather
-// function getWeather(){}
-// //Display the data 
-// searchBtn.addEventListener('click', ()=>{
-//     getWeather()
-//     console.log('hello')
-// })
-// 6ba47b673207e9c0536f15e9399b73a0
