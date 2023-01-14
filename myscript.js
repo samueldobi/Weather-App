@@ -20,7 +20,9 @@ function getApi(city){
   
 }
 function weatherDetails(info){
-    console.log(info.cod)
+    if(info.cod === "404" ){
+        alert('City not found')
+    }
     let degree = ((info.main.feels_like) - 273.15).toFixed(2)
     let cityName = info.name
     let weatherDescription = info.weather[0].description
@@ -28,7 +30,4 @@ function weatherDetails(info){
     temp.innerHTML = degree
     locate.innerHTML = cityName
     condition.innerHTML = weatherDescription
-    if(info.cod == "404"){
-        temp.innerHTML = 'City not found'
-    }
 }
