@@ -18,9 +18,14 @@ function getApi(city){
   
 }
 function weatherDetails(info){
-    // console.log(info.main.feels_like)
+    console.log(info)
     let degree = ((info.main.feels_like) - 273.15).toFixed(2)
-    console.log(degree)
+    let cityName = info.name
+    let weatherDescription = info.weather[0].description
+    console.log(weatherDescription)
+    temp.innerHTML = degree
+    locate.innerHTML = cityName
+    condition.innerHTML = weatherDescription
 }
 
 // //Function to get the weather
