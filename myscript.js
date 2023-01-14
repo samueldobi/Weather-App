@@ -4,16 +4,25 @@ const condition = document.querySelector('.condit')
 const searchBtn =  document.querySelector('.search-btn')
 const inputField = document.querySelector('.form-control')
 
+
 inputField.addEventListener('input',()=>{
     getApi(inputField.value)
 })
 //Retrieving api data
 function getApi(city){
-    let api =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid={6ba47b673207e9c0536f15e9399b73a0}`
+    // let api =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=6ba47b673207e9c0536f15e9399b73a0`
+    let api =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=6ba47b673207e9c0536f15e9399b73a0`
     fetch(api)
-    .then(response => console.log(response.json()))
+    .then(response => response.json())
+    .then(result => (weatherDetails(result)))
+  
 }
-getApi()
+function weatherDetails(info){
+    // console.log(info.main.feels_like)
+    let degree = ((info.main.feels_like) - 273.15).toFixed(2)
+    console.log(degree)
+}
+
 // //Function to get the weather
 // function getWeather(){}
 // //Display the data 
