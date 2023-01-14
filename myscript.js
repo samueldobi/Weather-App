@@ -13,6 +13,7 @@ function getApi(city){
     fetch(api)
     .then(response => console.log(response.json()))
 }
+getApi()
 // //Function to get the weather
 // function getWeather(){}
 // //Display the data 
