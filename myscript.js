@@ -39,4 +39,8 @@ function weatherDetails(info){
     pressure.innerHTML = press
     seaLevel.innerHTML = sea
     GroundLevel.innerHTML = grnd
+    if( info.main.sea_level  === undefined){
+        seaLevel.innerHTML  = "Not available"
+        GroundLevel.innerHTML = "Not available"
+    }
 }
