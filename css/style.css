@@ -66,6 +66,9 @@ body{
      font-size: 20px;
 
     }
+    .search-btn:hover{
+        transform: scale(1.2);
+    }
     .listed{
         list-style-type: none;
     }
