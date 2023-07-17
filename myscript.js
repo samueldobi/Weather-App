@@ -11,6 +11,7 @@ const GroundLevel  = document.querySelector('.ground-level')
 
 searchBtn.addEventListener('click',()=>{
     getApi(inputField.value)
+    inputField.value="";
 })
 //Retrieving api data
 function getApi(city){
@@ -44,3 +45,13 @@ function weatherDetails(info){
         GroundLevel.innerHTML = "Not available"
     }
 }
+
+inputField.addEventListener("keypress", function(event) {
+    // If the user presses the "Enter" key on the keyboard
+    if (event.key === "Enter") {
+      // Cancel the default action, if needed
+      event.preventDefault();
+      getApi(inputField.value)
+      inputField.value="";
+    }
+  });

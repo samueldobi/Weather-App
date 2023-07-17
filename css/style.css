@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-:root{
-    /* --orange : #F15412; */
-}
-*{
-    /* border: 1px solid red; */
-}
 body{
     font-family: 'Inter', sans-serif;
     background: url(../assets/weather1.jpg);
@@ -24,9 +18,6 @@ body{
     background-color: rgba(255, 255, 255, 0.53);
     border: 1px solid rgba(209, 213, 219, 0.3);
     height: 100vh;
-}
-*{
-    /* border: 1px solid red; */
 }
 .search{
     position: relative;
@@ -85,15 +76,9 @@ body{
         width: 100px;
         height: 50px;
     }
-    .mobile-nav{
-        display: none;
-    }
 /* Media queries */
-@media screen and (max-width: 650px) {
-    .card{
-        display: none;
-    }
-    .mobile-nav{
-        display: block;
-    }
+@media screen and (max-width: 768px) {
+   .weather-list{
+    display: none;
+   }
   }
