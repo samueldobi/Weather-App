@@ -11,7 +11,7 @@ body{
     background: url(../assets/weather1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    /* height: 100vh; */
+    height: 100vh;
     width:100%;
 }
 .main{
@@ -85,4 +85,15 @@ body{
         width: 100px;
         height: 50px;
     }
+    .mobile-nav{
+        display: none;
+    }
 /* Media queries */
+@media screen and (max-width: 650px) {
+    .card{
+        display: none;
+    }
+    .mobile-nav{
+        display: block;
+    }
+  }
